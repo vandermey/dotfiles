@@ -1,0 +1,10 @@
+profile work {
+	output "Philips Consumer Electronics Company PHL 346B1C 0x0000025F" position 0,0 enable
+	output eDP-1 position 3440,0 enable
+	exec sh -c "$HOME/.config/yambar/scripts/yambar-start.sh"
+}
+
+profile laptop {
+	output eDP-1 enable
+	exec sh -c "$HOME/.config/yambar/scripts/yambar-start.sh"
+}
