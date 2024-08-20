@@ -186,3 +186,6 @@ bash $HOME/.config/river/autostart.sh
 riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad natural-scroll enabled
 riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad tap enabled
 riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad tap-button-map left-right-middle
+
+# Service side borders
+riverctl rule-add -app-id org.mozilla.firefox ssd
