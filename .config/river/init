@@ -8,6 +8,22 @@
 # See the river(1), riverctl(1), and rivertile(1) man pages for complete
 # documentation.
 
+riverctl spawn "dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS SEATD_SOCK DISPLAY WAYLAND_DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+riverctl spawn "gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
+riverctl spawn "swaybg -m fill -i ~/.dotfiles/wallpaper.png"
+riverctl spawn "wlsunset -l 52.09 -L 5.12"
+riverctl spawn "kanshi"
+riverctl spawn "nm-applet --indicator"
+riverctl spawn "swayidle -w \
+	timeout 300 'swaylock -f -i ~/.dotfiles/wallpaper.png' \
+	timeout 600 'wlopm --off \*;swaylock -F -i ~/.dotfiles/wallpaper.png' resume 'wlopm --on \*' \
+	before-sleep 'swaylock -f -i ~/.dotfiles/wallpaper.png'"
+riverctl spawn "wl-clipboard-histry -t"
+riverctl spawn "wl-paste --type text --watch cliphist store"
+riverctl spawn "wl-paste --type images --watch cliphist store"
+
+
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
@@ -21,6 +37,9 @@ riverctl map normal Super+Shift E exit
 
 # Launcher
 riverctl map normal Super D spawn "fuzzel"
+
+# Filemanager
+riverctl map normal Super E spawn "pcmanfm"
 
 # Toggle yambar
 riverctl map normal Super B spawn "killall yambar || ~/.config/yambar/scripts/yambar-start.sh"
@@ -159,12 +178,6 @@ riverctl border-color-unfocused 0x595959
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
-# Make all views with an app-id that starts with "float" and title "foo" start floating.
-riverctl rule-add -app-id 'float*' -title 'foo' float
-
-# Make all views with app-id "bar" and any title use client-side decorations
-riverctl rule-add -app-id "bar" csd
-
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
@@ -179,13 +192,38 @@ riverctl map normal Super Print spawn 'grim -t jpeg -g "$(slurp)" ~/Pictures/Scr
 # Take a screenshot and save it to the clipboard
 riverctl map normal Super+Shift Print spawn 'grim -g "$(slurp)" -| wl-copy && notify-send "Screenshot Clipped"'
 
-# Auto starting apps
-bash $HOME/.config/river/autostart.sh
-
 # Touchpad
 riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad natural-scroll enabled
 riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad tap enabled
 riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad tap-button-map left-right-middle
 
 # Service side borders
-riverctl rule-add -app-id org.mozilla.firefox ssd
+riverctl rule-add -app-id firefox ssd
+riverctl rule-add -app-id thunderbird ssd
+
+# Floats
+riverctl rule-add -app-id "steam" float
+riverctl rule-add -app-id "pcmanfm" float
+
+# Make certain views start floating
+riverctl float-filter-add app-id float
+riverctl float-filter-add app-id 'pavucontrol'
+riverctl float-filter-add app-id 'Timeshift-gtk'
+riverctl float-filter-add app-id 'pavucontrol'
+riverctl float-filter-add app-id 'nm-connection-editor'
+riverctl float-filter-add app-id 'nwg-look'
+riverctl float-filter-add app-id 'valent'
+riverctl float-filter-add app-id 'file-roller'
+riverctl float-filter-add app-id 'GParted'
+riverctl float-filter-add app-id 'ristretto'
+riverctl float-filter-add title "popup title with spaces"
+riverctl float-filter-add title "Open File"
+riverctl float-filter-add title "File Operation Progress"
+riverctl float-filter-add title "Preferences"
+riverctl float-filter-add title "dialog"
+riverctl float-filter-add title "Picture-in-Picture"
+riverctl float-filter-add title "bubble"
+riverctl float-filter-add title "task_dialog"
+riverctl float-filter-add title "menu"
+riverctl float-filter-add title "Confirm to replace files"
+

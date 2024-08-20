@@ -20,13 +20,17 @@ set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_SESSION_TYPE "wayland"
 set -x XKB_DEFAULT_LAYOUT "us"
 
+set -x LIBVA_DRIVER_NAME nvidia
+set -x GBM_BACKEND nvidia-drm
+set -x __GLX_VENDOR_LIBRARY_NAME nvidia
+
 # Paths
 fish_add_path ~/.local/bin
 
-# Conditionally load config
-set host_config ~/.config/fish/config.(hostname).fish
-test -r $host_config; and source $host_config
-set -e host_config
+# Alias
+alias ls="ls -la"
+alias fishconf="nvim ~/.config/fish/config.fish"
+alias riverconf="nvim ~/.config/river/init"
 
 # Autostart River on TTY1
 set TTY1 (tty)
