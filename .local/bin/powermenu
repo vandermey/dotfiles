@@ -20,10 +20,10 @@ case $chosen in
         $lock 
         ;;    
     "$power_off")
-        poweroff
+        systemctl poweroff
         ;;
     "$reboot")
-        reboot
+        systemctl reboot
         ;;
     "$suspend")
         $lock && systemctl suspend
