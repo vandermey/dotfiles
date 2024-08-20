@@ -179,5 +179,10 @@ riverctl map normal Super Print spawn 'grim -t jpeg -g "$(slurp)" ~/Pictures/Scr
 # Take a screenshot and save it to the clipboard
 riverctl map normal Super+Shift Print spawn 'grim -g "$(slurp)" -| wl-copy && notify-send "Screenshot Clipped"'
 
-# auto starting apps
+# Auto starting apps
 bash $HOME/.config/river/autostart.sh
+
+# Touchpad
+riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad natural-scroll enabled
+riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad tap enabled
+riverctl input pointer-1267-12850-ELAN06A1:00_04F3:3232_Touchpad tap-button-map left-right-middle
