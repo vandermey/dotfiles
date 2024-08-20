@@ -4,6 +4,11 @@ profile work {
 	exec sh -c "$HOME/.config/yambar/scripts/yambar-start.sh"
 }
 
+profile desktop {
+	output "Acer Technologies ED347CKR 0x20161017" position 0,0 enable
+	exec sh -c "yambar -c ~/.config/yambar/config-desktop.yml"
+}
+
 profile laptop {
 	output eDP-1 enable
 	exec sh -c "$HOME/.config/yambar/scripts/yambar-start.sh"

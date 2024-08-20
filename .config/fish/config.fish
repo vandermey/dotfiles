@@ -1,5 +1,7 @@
+# Disable Greeting
 set fish_greeting
 
+# Env Variables
 set -x BROWSER "firefox"
 set -x EDITOR "nvim"
 #set -x GDK_BACKEND "wayland"
@@ -18,7 +20,14 @@ set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_SESSION_TYPE "wayland"
 set -x XKB_DEFAULT_LAYOUT "us"
 
+# Paths
 fish_add_path ~/.local/bin
 
+# Conditionally load config
+set host_config ~/.config/fish/config.(hostname).fish
+test -r $host_config; and source $host_config
+set -e host_config
+
+# Autostart River on TTY1
 set TTY1 (tty)
-[ "$TTY1" = "/dev/tty1" ] && exec river
+[ "$TTY1" = "/dev/tty1" ] && exec river > ~/.river.log 2>&1
