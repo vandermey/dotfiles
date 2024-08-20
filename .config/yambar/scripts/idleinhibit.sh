@@ -23,9 +23,9 @@ case $1 in
 		while true; do
 		if pgrep "swayidle" > /dev/null
 		then
-			icon=""
-		else
 			icon=""
+		else
+			icon=""
 		fi
 		echo "idleinhibit|string|$icon"
 		echo ""

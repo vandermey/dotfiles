@@ -85,10 +85,7 @@ fi
 
 # If on matching tty start the WM 
 if [ "$(tty)" = "/dev/tty1" ]; then
-	# Kill any existing daemons and only then try to start a new set.
-	pkill -u "${USER}" -x pipewire\|wireplumber 1>/dev/null 2>&1
-	dbus-run-session pipewire &> /dev/null &
-	exec dbus-run-session river
+	exec river
 fi
 
 # If not in xterm don't start starship

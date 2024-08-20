@@ -140,7 +140,7 @@ bar:
               - map:
                   <<: *volume
     - backlight:
-        name: amdgpu_b11
+        name: amdgpu_bl1
         content: [ string: {text: , font: *nerdfont}, string: {text: "{percent}%", on-click: { left: sh -c "light -U 5", right: sh -c "light -A 5"}}]
     - battery:
         name: BAT0
