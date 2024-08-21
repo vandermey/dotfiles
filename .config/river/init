@@ -28,7 +28,7 @@ riverctl spawn "wl-paste --type images --watch cliphist store"
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
-riverctl map normal Super grave spawn foot
+riverctl map normal Super grave spawn "foot -e tmux a -t default || foot -e tmux new -s default"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close

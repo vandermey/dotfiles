@@ -4,11 +4,7 @@ set fish_greeting
 # Env Variables
 set -x BROWSER "firefox"
 set -x EDITOR "nvim"
-#set -x GDK_BACKEND "wayland"
-set -x GTK2_RC_FILES "/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc"
 set -x GTK_THEME "Adwaita-dark"
-#set -x LANG "en_US.UTF-8"
-#set -x LC_ALL "en_US.UTF-8"
 set -x MANPATH "$HOME/.local/share/man/:$MANPATH"
 set -x MOZ_ENABLE_WAYLAND 1
 set -x QT_QPA_PLATFORM "wayland"
@@ -26,11 +22,19 @@ set -x __GLX_VENDOR_LIBRARY_NAME nvidia
 
 # Paths
 fish_add_path ~/.local/bin
+fish_add_path /var/lib/flatpak/exports/share
+fish_add_path /var/lib/flatpak/exports/bin
+fish_add_path /var/lib/snapd/desktop/applications/
+fish_add_path ~/.local/share/JetBrains/Toolbox/scripts
 
 # Alias
+alias dce="docker compose exec --user=1000:1000"
 alias ls="ls -la"
 alias fishconf="nvim ~/.config/fish/config.fish"
 alias riverconf="nvim ~/.config/river/init"
+alias sail="vendor/bin/sail"
+alias vi="nvim"
+alias vim="nvim"
 
 # Autostart River on TTY1
 set TTY1 (tty)
