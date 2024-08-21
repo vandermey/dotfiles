@@ -5,7 +5,6 @@ set fish_greeting
 set -x BROWSER "firefox"
 set -x EDITOR "nvim"
 set -x GTK_THEME "Adwaita-dark"
-set -x MANPATH "$HOME/.local/share/man/:$MANPATH"
 set -x MOZ_ENABLE_WAYLAND 1
 set -x QT_QPA_PLATFORM "wayland"
 set -x QT_QPA_PLATFORMTHEME "Adwaita-dark"
@@ -16,9 +15,13 @@ set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x XDG_SESSION_TYPE "wayland"
 set -x XKB_DEFAULT_LAYOUT "us"
 
-set -x LIBVA_DRIVER_NAME nvidia
-set -x GBM_BACKEND nvidia-drm
-set -x __GLX_VENDOR_LIBRARY_NAME nvidia
+# Only load Nvidia env variables on desktop
+if test $hostname = "archlinux-desktop"
+    set -x LIBVA_DRIVER_NAME nvidia
+    set -x GBM_BACKEND nvidia-drm
+    set -x __GLX_VENDOR_LIBRARY_NAME nvidia
+    echo "Nvidia variables are loaded"
+end
 
 # Paths
 fish_add_path ~/.local/bin
