@@ -2,6 +2,11 @@
 
 killall yambar
 
+if [[ $HOSTNAME = "archlinux-desktop" ]]; then
+    yambar -c ~/.config/yambar/config-desktop.yml
+    exit 0
+fi
+
 monitors=$(wlr-randr | grep "^[^ ]" | awk '{ print$1 }')
 total=$(wlr-randr | grep "^[^ ]" | awk '{ print$1 }' | wc -l)
 
