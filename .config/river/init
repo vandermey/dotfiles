@@ -14,6 +14,7 @@ riverctl spawn "gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
 riverctl spawn "swaybg -m fill -i ~/.dotfiles/.wallpaper.png"
 riverctl spawn "wlsunset -l 52.09 -L 5.12"
 riverctl spawn "kanshi"
+riverctl spawn "mako"
 riverctl spawn "nm-applet --indicator"
 riverctl spawn "swayidle -w \
 	timeout 300 'swaylock -f -i ~/.dotfiles/.wallpaper.png' \

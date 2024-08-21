@@ -13,7 +13,7 @@ bar:
     left-margin: 10
     right-margin: 10
     color: D8DEE900 
-  background: 000000AA
+  background: 1f1f1f
   foreground: ffffffff
 
   left:
