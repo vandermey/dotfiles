@@ -2,25 +2,23 @@
 set fish_greeting
 
 # Env Variables
-set -x BROWSER "firefox"
-set -x EDITOR "nvim"
-set -x GTK_THEME "Adwaita-dark"
+set -x BROWSER firefox
+set -x EDITOR nvim
+set -x GTK_THEME Adwaita-dark
 set -x MOZ_ENABLE_WAYLAND 1
-set -x QT_QPA_PLATFORM "wayland"
-set -x QT_QPA_PLATFORMTHEME "Adwaita-dark"
-set -x QT_STYLE_OVERRIDE "Adwaita-Dark"
-set -x TERMINAL "foot"
-set -x VISUAL "nvim"
+# set -x QT_QPA_PLATFORM wayland
+set -x QT_STYLE_OVERRIDE kvantum
+set -x TERMINAL foot
+set -x VISUAL nvim
 set -x XDG_CONFIG_HOME "$HOME/.config"
-set -x XDG_SESSION_TYPE "wayland"
-set -x XKB_DEFAULT_LAYOUT "us"
+set -x XDG_SESSION_TYPE wayland
+set -x XKB_DEFAULT_LAYOUT us
 
 # Only load Nvidia env variables on desktop
-if test $hostname = "archlinux-desktop"
+if test $hostname = archlinux-desktop
     set -x LIBVA_DRIVER_NAME nvidia
     set -x GBM_BACKEND nvidia-drm
     set -x __GLX_VENDOR_LIBRARY_NAME nvidia
-    echo "Nvidia variables are loaded"
 end
 
 # Paths
@@ -41,4 +39,4 @@ alias vim="nvim"
 
 # Autostart River on TTY1
 set TTY1 (tty)
-[ "$TTY1" = "/dev/tty1" ] && exec river > ~/.river.log 2>&1
+[ "$TTY1" = /dev/tty1 ] && exec river >~/.river.log 2>&1
