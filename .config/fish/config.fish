@@ -21,6 +21,9 @@ if test $hostname = archlinux-desktop
     set -x __GLX_VENDOR_LIBRARY_NAME nvidia
 end
 
+# Source files
+source /usr/share/doc/pkgfile/command-not-found.fish
+
 # Paths
 fish_add_path ~/.local/bin
 fish_add_path /var/lib/flatpak/exports/share
