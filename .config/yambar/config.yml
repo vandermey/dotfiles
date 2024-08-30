@@ -80,6 +80,7 @@ bar:
           - string:
                 margin: 0
                 text: "{time}"
+  right:
     - script:
         path: ~/.config/yambar/scripts/idleinhibit.sh
         args: []
@@ -89,7 +90,6 @@ bar:
                 text: "{idleinhibit}"
                 font: *nerdfont
                 on-click: sh -c "~/.config/yambar/scripts/idleinhibit.sh toggle"
-  right:
     - pipewire:
         anchors:
           volume: &volume
