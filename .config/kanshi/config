@@ -1,15 +1,12 @@
 profile work {
 	output "Philips Consumer Electronics Company PHL 346B1C 0x0000025F" position 0,0 enable
 	output eDP-1 disable
-	exec sh -c "killall yambar; yambar"
 }
 
 profile desktop {
 	output "Acer Technologies ED347CKR 0x20161017" enable
-	exec sh -c "yambar -c ~/.config/yambar/config-desktop.yml"
 }
 
 profile laptop {
 	output eDP-1 enable
-	exec sh -c "killall yambar; yambar"
 }

@@ -1,0 +1,136 @@
+@import "colors.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "GoMono Nerd Font Mono";
+    font-weight: normal;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(@surface0, 0);
+    color: @text;
+}
+
+tooltip {
+    background: @surface0;
+    opacity: 1;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+tooltip label{
+    color: @text;
+}
+
+#tags button {
+    padding: 5px;
+    color: @text;
+    margin-right: 5px;
+}
+
+#tags button.active {
+    color: @mauve;
+}
+
+#tags button.focused {
+    color: @mauve;
+    border-radius: 10px;
+}
+
+#tags button.urgent {
+    color: #11111b;
+    background: @green;
+    border-radius: 10px;
+}
+
+#tags button:hover {
+    background: #11111b;
+    color: @text;
+    border-radius: 10px;
+}
+
+#window,
+#cpu,
+#disk,
+#custom-updates,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#temperature,
+#tags,
+#backlight
+{
+    background: @surface0;
+    opacity: 1;
+    padding: 0px 10px;
+    margin: 0px 0px;
+    border: 0px;
+}
+
+#clock {
+	  padding: 0px 10px;
+    border-radius: 10px;
+}
+
+#tray, #backlight, #temperature #cpu {
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 10px;
+    
+}
+
+#tray, #tags, #pulseaudio, #battery, #disk, #custom-music2 {
+    border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+#temperature.critical {
+    color: #e92d4d;
+}
+
+#cpu {
+	color: @yellow;
+}
+
+#memory {
+    color: @red;
+}
+
+#disk {
+    color: @maroon;
+}
+
+#tags {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#window {
+    border-radius: 10px;
+}
+
+#pulseaudio {
+    color: @mauve;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#battery {
+    color: @green;
+    border-left: 0px;
+}
+
+#tray, #battery {
+	  border-radius: 10px;
+}
+
+#tags {
+    margin-left: 10px;
+    border-radius: 10px;
+}

@@ -7,7 +7,7 @@ set -x EDITOR nvim
 set -x GTK_THEME Adwaita-dark
 set -x MOZ_ENABLE_WAYLAND 1
 # set -x QT_QPA_PLATFORM wayland
-set -x QT_STYLE_OVERRIDE kvantum
+set -x QT_STYLE_OVERRIDE Fusion
 set -x TERMINAL foot
 set -x VISUAL nvim
 set -x XDG_CONFIG_HOME "$HOME/.config"
@@ -37,6 +37,7 @@ alias ls="ls -la"
 alias fishconf="nvim ~/.config/fish/config.fish"
 alias riverconf="nvim ~/.config/river/init"
 alias sail="vendor/bin/sail"
+alias ssh="TERM=xterm-256color $(which ssh)"
 alias vi="nvim"
 alias vim="nvim"
 
