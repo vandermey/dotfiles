@@ -1,7 +1,7 @@
 @import "colors.css";
 * {
     border: none;
-    font-family: "GoMono Nerd Font Mono";
+    font-family: "JetBrainsMono Nerd Font";
     font-weight: normal;
     font-size: 14px;
     min-height: 0;
@@ -64,6 +64,12 @@ tooltip label{
     opacity: 1;
     margin: 0;
     border: 0;
+}
+
+#battery,
+#pulseaudio,
+#backlight {
+    margin: 0 3px;
 }
 
 #temperature.critical {
