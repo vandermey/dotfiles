@@ -8,8 +8,7 @@
 }
 
 window#waybar {
-    color: @text;
-    background: alpha(@surface0, 0);
+    background: rgba(26, 27, 38, 0.8);
 }
 
 tooltip {
@@ -54,6 +53,7 @@ tooltip label{
 #custom-updates,
 #memory,
 #clock,
+#idle_inhibator,
 #battery,
 #pulseaudio,
 #network,
@@ -68,8 +68,12 @@ tooltip label{
 
 #battery,
 #pulseaudio,
-#backlight {
+#backlight{
     margin: 0 3px;
+}
+
+#idle_inhibitor {
+    font-size: 10px;
 }
 
 #temperature.critical {
