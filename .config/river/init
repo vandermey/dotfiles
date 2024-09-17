@@ -16,12 +16,13 @@ riverctl spawn "wlsunset -l 52.09 -L 5.12"
 riverctl spawn "kanshi"
 riverctl spawn "mako"
 riverctl spawn "nm-applet --indicator"
+riverctl spawn "pcmanfm -d &"
 riverctl spawn "swayidle -w \
 	timeout 300 'swaylock -f -i ~/.dotfiles/.wallpaper.png --effect-blur 10x5 --clock --indicator' \
 	timeout 600 'wlopm --off \*;swaylock -F -i ~/.dotfiles/.wallpaper.png --effect-blur 10x5 --clock --indicator' resume 'wlopm --on \*' \
 	before-sleep 'swaylock -f -i ~/.dotfiles/.wallpaper.png --effect-blur 10x5 --clock --indicator'"
 riverctl spawn "waybar"
-riverctl spawn "wl-clipboard-history -t"
+# riverctl spawn "wl-clipboard-history -t"
 riverctl spawn "wl-paste --type text --watch cliphist store"
 riverctl spawn "wl-paste --type images --watch cliphist store"
 

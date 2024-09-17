@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 lock="swaylock -f -i ~/.dotfiles/.wallpaper.png --effect-blur 10x5 --clock --indicator"
 
 #### Options ###
