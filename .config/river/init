@@ -15,6 +15,7 @@ riverctl spawn "swaybg -m fill -i ~/.dotfiles/.wallpaper.png"
 riverctl spawn "wlsunset -l 52.09 -L 5.12"
 riverctl spawn "kanshi"
 riverctl spawn "mako"
+riverctl spawn "nextcloud"
 riverctl spawn "nm-applet --indicator"
 riverctl spawn "pcmanfm -d &"
 riverctl spawn "swayidle -w \
@@ -29,8 +30,8 @@ riverctl spawn "wl-paste --type images --watch cliphist store"
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 # Term
-riverctl map normal Super+Shift grave spawn "foot -e tmux a -t default || foot -e tmux new -s default"
-riverctl map normal Super grave spawn "foot"
+riverctl map normal Super+Shift grave spawn "alacritty -e tmux a -t default || alacritty -e tmux new -s default"
+riverctl map normal Super grave spawn "alacritty"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
