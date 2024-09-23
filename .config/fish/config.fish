@@ -4,6 +4,9 @@ set fish_greeting
 # Source files
 # source /usr/share/doc/pkgfile/command-not-found.fish
 
+# Env variables
+set -g direnv_fish_mode eval_on_arrow
+
 # Paths
 fish_add_path ~/.local/bin
 fish_add_path /var/lib/flatpak/exports/share
@@ -24,3 +27,6 @@ alias vim="nvim"
 # Autostart River on TTY1
 set TTY1 (tty)
 [ "$TTY1" = /dev/tty1 ] && exec river >~/.river.log 2>&1
+
+# Direnv hook
+direnv hook fish | source
